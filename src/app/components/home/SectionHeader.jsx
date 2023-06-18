@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionHeader = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white overflow-hidden dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
         <div className="flex flex-col justify-center">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
@@ -22,7 +22,7 @@ const SectionHeader = () => {
             >
               Mulai voting
               <svg
-                ariaHidden="true"
+                aria-hidden="true"
                 className="ml-2 -mr-1 w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -44,10 +44,10 @@ const SectionHeader = () => {
           </div>
         </div>
         <div>
-          <div className="mx-auto w-45 lg:max-w-xl sm:h-96">
+          <div className="mx-auto lg:max-w-xl">
             <img
               src="voting.svg"
-              className="transform scale-75 hidden md:block"
+              className="w-3/4 h-auto auto mx-auto mt-14 hidden md:block"
               alt="Amivote Landing Page"
             />
           </div>
