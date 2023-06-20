@@ -9,10 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/next-js": "^2.1.4",
-    "@chakra-ui/react": "^2.7.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@truffle/contract": "^4.6.24",
     "autoprefixer": "10.4.14",
     "dotenv": "^16.3.0",

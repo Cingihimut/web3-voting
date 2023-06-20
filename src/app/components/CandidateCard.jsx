@@ -1,5 +1,31 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import contract from "../utils/contract";
 const CandidateCard = ({ img, nama, deskripsi }) => {
+  const [candidates, setCandidates] = useState([]);
+
+  useEffect(() => {
+    fetchCandidates();
+  }, []);
+
+  const fetchCandidates = async () => {
+    try {
+      const candidateCount = await contract.methods.candidateCount().call();
+      console.log(candidateCount);
+      let message = await contract.methods.getMessage().call();
+      console.log(message);
+      const candidatesData = [];
+
+      const candidate = await contract.methods.getCandidate(1).call();
+
+      // console.log(candidate);
+      setCandidates(candidate);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <div className="w-2/3 mx-4 text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-center items-center">

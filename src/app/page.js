@@ -1,10 +1,10 @@
 "use client";
 
-import SectionHeader from "./components/home/SectionHeader";
+import HomePage from "./components/home/HomePage";
 const Home = () => {
   return (
     <>
-      <SectionHeader />
+      <HomePage />
     </>
   );
 };
