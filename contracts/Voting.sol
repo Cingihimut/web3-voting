@@ -9,6 +9,8 @@ contract Voting {
         uint256 voteCount;
     }
 
+    uint256 public startTime;
+    uint256 public endTime;
     uint256 public candidatesCount;
     address public owner;
 
@@ -18,11 +20,17 @@ contract Voting {
 
     event CandidateAdded(uint256 indexed id, string name);
     event VoteCast(address indexed voter, uint256 indexed candidateId);
+    event VotingStarted(uint256 startTime, uint256 endTime);
 
     constructor() {
         owner = msg.sender;
         addCandidate("Candidate 1");
         addCandidate("Candidate 2");
+    }
+
+    modifier onlyDuringVoting(){
+        require(block.timestamp >= startTime && block.timestamp <= endTime, "Voting is not currenly active");
+        _;
     }
 
     modifier onlyOwner() {
@@ -41,7 +49,15 @@ contract Voting {
         registeredVoters[_voter] = true;
     }
 
-    function vote(uint256 _candidateId) public {
+    function startVoting (uint256 durationInSecond) public onlyOwner {
+        require(startTime == 0, "Voting has already started");
+        startTime = block.timestamp;
+        endTime = startTime + durationInSecond;
+
+        emit VotingStarted (startTime, endTime);
+    }
+
+    function vote(uint256 _candidateId) public onlyDuringVoting{
         require(registeredVoters[msg.sender], "You are not registered to vote");
         require(!votedOrNot[msg.sender], "You have already voted");
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID");
@@ -51,5 +67,13 @@ contract Voting {
         votedOrNot[msg.sender] = true;
 
         emit VoteCast(msg.sender, _candidateId);
+    }
+
+    function getRemainingTime() public view returns (uint256) {
+        if (block.timestamp <= endTime) {
+            return endTime - block.timestamp;
+        } else {
+            return 0;
+        }
     }
 }
