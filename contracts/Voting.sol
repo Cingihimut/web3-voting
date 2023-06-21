@@ -39,6 +39,11 @@ contract Voting {
         _;
     }
 
+    modifier notOwner() {
+        require(msg.sender != owner, "Owner cannot  vote");
+        _;
+    }
+
     function addCandidate(string memory name, string memory deskripsi) public onlyOwner {
         candidatesCount++;
         candidates[candidatesCount] = Candidate(candidatesCount, name, deskripsi, 0);
