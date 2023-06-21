@@ -6,6 +6,7 @@ contract Voting {
     struct Candidate {
         uint256 id;
         string name;
+        string deskripsi;
         uint256 voteCount;
     }
 
@@ -24,8 +25,8 @@ contract Voting {
 
     constructor() {
         owner = msg.sender;
-        addCandidate("Candidate 1");
-        addCandidate("Candidate 2");
+        addCandidate("Candidate 1", "deskripsi kandidat");
+        addCandidate("Candidate 2", "deskripsi kandidat");
     }
 
     modifier onlyDuringVoting(){
@@ -38,9 +39,9 @@ contract Voting {
         _;
     }
 
-    function addCandidate(string memory name) public onlyOwner {
+    function addCandidate(string memory name, string memory deskripsi) public onlyOwner {
         candidatesCount++;
-        candidates[candidatesCount] = Candidate(candidatesCount, name, 0);
+        candidates[candidatesCount] = Candidate(candidatesCount, name, deskripsi, 0);
         
         emit CandidateAdded(candidatesCount, name);
     }
