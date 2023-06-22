@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import contractABI from "../../../build/contracts/TestVote";
+import contractABI from "../../contracts/TestVote";
 
 // Membuat instance Web3
 let web3;
