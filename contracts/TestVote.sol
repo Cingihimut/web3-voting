@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-contract Voting {
+contract TestVote {
     struct Candidate {
         uint256 id;
         string name;
@@ -10,13 +10,13 @@ contract Voting {
         uint256 voteCount;
     }
 
-    uint256 public startTime;
+    // uint256 public startTime;
     uint256 public endTime;
     uint256 public candidatesCount;
     address public owner;
 
     mapping(uint256 => Candidate) public candidates;
-    mapping(address => bool) public registeredVoters;
+    // mapping(address => bool) public registeredVoters;
     mapping(address => bool) public votedOrNot;
 
     event CandidateAdded(uint256 indexed id, string name);
@@ -25,14 +25,14 @@ contract Voting {
 
     constructor() {
         owner = msg.sender;
-        addCandidate("Aldi", "Taher");
-        addCandidate("Some description about the candidate", "Some description about the candidate");
+        addCandidate("Candidate 1", "deskripsi kandidat");
+        addCandidate("Candidate 2", "deskripsi kandidat");
     }
 
-    modifier onlyDuringVoting(){
-        require(block.timestamp >= startTime && block.timestamp <= endTime, "Voting is not currenly active");
-        _;
-    }
+    // modifier onlyDuringVoting(){
+    //     require(block.timestamp <= endTime, "Voting is not currenly active");
+    //     _;
+    // }
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Only contract owner can perform this action");
@@ -51,21 +51,25 @@ contract Voting {
         emit CandidateAdded(candidatesCount, name);
     }
 
-    function registerVoter(address _voter) public onlyOwner {
-        registeredVoters[_voter] = true;
+    // function registerVoter(address _voter) public onlyOwner {
+    //     registeredVoters[_voter] = true;
+    // }
+
+    // function startVoting (uint256 durationInSecond) public onlyOwner {
+    //     require(startTime == 0, "Voting has already started");
+    //     startTime = block.timestamp;
+    //     endTime = startTime + durationInSecond;
+
+    //     emit VotingStarted (startTime, 1688031349);
+        
+    // }
+
+    function getBlockTime() public view returns (uint256){
+        return block.timestamp;
     }
 
-    function startVoting (uint256 durationInSecond) public onlyOwner {
-        require(startTime == 0, "Voting has already started");
-        startTime = block.timestamp;
-        endTime = startTime + durationInSecond;
-
-        emit VotingStarted (startTime, 1688031349);
-
-    }
-
-    function vote(uint256 _candidateId) public onlyDuringVoting{
-        require(registeredVoters[msg.sender], "You are not registered to vote");
+    function vote(uint256 _candidateId) public{
+        // require(registeredVoters[msg.sender], "You are not registered to vote");
         require(!votedOrNot[msg.sender], "You have already voted");
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID");
 
@@ -77,10 +81,6 @@ contract Voting {
     }
 
     function getRemainingTime() public view returns (uint256) {
-        if (block.timestamp <= endTime) {
             return endTime - block.timestamp;
-        } else {
-            return 0;
-        }
     }
 }

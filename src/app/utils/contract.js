@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import contractABI from "../contracts/VotingContract.json";
+import contractABI from "../../../build/contracts/TestVote";
 
 // Membuat instance Web3
 let web3;
@@ -15,7 +15,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
 }
 
 // Mendefinisikan alamat kontrak pintar
-const contractAddress = "0xa085afEDfa1922E6eAA13da5C11dd2A97a465B7d"; // Ganti dengan alamat kontrak pintar yang sesuai
+const contractAddress = "0x004cB9e3e476460a63F14F5E5212C7114d0A0aB6"; // Ganti dengan alamat kontrak pintar yang sesuai
 
 // Mendefinisikan instance kontrak pintar
 const contract = new web3.eth.Contract(contractABI.abi, contractAddress);
