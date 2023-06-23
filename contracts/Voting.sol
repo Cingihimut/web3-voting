@@ -25,8 +25,8 @@ contract Voting {
 
     constructor() {
         owner = msg.sender;
-        addCandidate("Aldi", "Taher");
-        addCandidate("Some description about the candidate", "Some description about the candidate");
+        addCandidate("Aldi", "Some description about the candidate");
+        addCandidate("Taher", "Some description about the candidate");
     }
 
     modifier onlyDuringVoting(){
@@ -74,6 +74,11 @@ contract Voting {
         votedOrNot[msg.sender] = true;
 
         emit VoteCast(msg.sender, _candidateId);
+    }
+    function getCandidate(uint256 _candidateId) public view returns(uint256, string memory, string memory, uint256) {
+        require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid Candidate Id");
+        Candidate memory candidate = candidates[_candidateId];
+        return(candidate.id, candidate.name, candidate.deskripsi, candidate.voteCount);
     }
 
     function getRemainingTime() public view returns (uint256) {
