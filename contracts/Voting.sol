@@ -75,10 +75,21 @@ contract Voting {
 
         emit VoteCast(msg.sender, _candidateId);
     }
+
     function getCandidate(uint256 _candidateId) public view returns(uint256, string memory, string memory, uint256) {
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid Candidate Id");
         Candidate memory candidate = candidates[_candidateId];
         return(candidate.id, candidate.name, candidate.deskripsi, candidate.voteCount);
+    }
+
+    function getCandidateById(uint256 _candidateId) public view returns (string memory, string memory, uint256) {
+    require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID");
+    Candidate memory candidate = candidates[_candidateId];
+    return (candidate.name, candidate.deskripsi, candidate.voteCount);
+    }
+
+    function hashVoted(address _voter) public view returns (bool){
+        return votedOrNot[_voter];
     }
 
     function getRemainingTime() public view returns (uint256) {
