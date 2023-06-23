@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@truffle/contract": "^4.6.24",
+    "@truffle/hdwallet-provider": "^2.1.12",
     "autoprefixer": "10.4.14",
-    "dotenv": "^16.3.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
     "framer-motion": "^10.12.16",

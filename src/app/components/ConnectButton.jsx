@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
-import { connectWeb3, web3 } from "../utils/web3";
+import { connectWeb3 } from "../utils/web3";
 const ConnectButton = () => {
   const [connectedAddress, setConnectedAddress] = useState(null);
 
   const handleConnect = async () => {
     try {
-      await connectWeb3();
-
-      const accounts = await web3.eth.getAccounts();
+      const web3 = await connectWeb3();
+      const accounts = await web3.eth.requestAccounts();
       if (accounts.length > 0) {
         setConnectedAddress(accounts[0]);
       }

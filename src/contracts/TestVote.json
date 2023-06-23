@@ -10024,14 +10024,72 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0xe83b2a43e7e82d975c8a0a6d2f045153c869e111136a34d1889ab7b598e396a3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "name": "CandidateAdded",
+          "type": "event"
+        },
+        "0xa36cc2bebb74db33e9f88110a07ef56e1b31b24b4c4f51b54b1664266e29f45b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "voter",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "candidateId",
+              "type": "uint256"
+            }
+          ],
+          "name": "VoteCast",
+          "type": "event"
+        },
+        "0xf8c022056754dbacca05aff710dc315a2fa7699ae9309fda403cd1e55c11d40f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "endTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "VotingStarted",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x004cB9e3e476460a63F14F5E5212C7114d0A0aB6",
-      "transactionHash": "0x43b5a634a093b732f16d41b0444dd18d1ef551a5406612d225c80a4993280a32"
+      "address": "0xa085afEDfa1922E6eAA13da5C11dd2A97a465B7d",
+      "transactionHash": "0x7a4cba54729c8b0d2d16a80ff3e80a80fd84f4625adcd46dc533f2f31c17d8ce"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-06-22T16:48:01.272Z",
+  "updatedAt": "2023-06-23T13:52:20.318Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
