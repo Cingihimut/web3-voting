@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-import { voteCandidate } from "../utils/voteCandidate";
+
 const VoteButton = ({ id_kandidat, isVoted, handleVote }) => {
   return (
     <button

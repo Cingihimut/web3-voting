@@ -1,6 +1,4 @@
-import HDWalletProvider from "@truffle/hdwallet-provider";
 import { Web3 } from "web3";
-const NETWORK_ID = "11155111";
 let web3;
 const setInfuraSepoliaNetwork = async () => {
   const networkName = "Sepolia ETH Amivote"; // Nama jaringan yang ingin diatur
@@ -36,6 +34,7 @@ export const connectWeb3 = async () => {
         const web3 = new Web3(window.ethereum);
         resolve(web3);
       } catch (error) {
+        console.log(error);
         reject(error);
       }
     } else {

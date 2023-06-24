@@ -12,7 +12,7 @@ export const createContractInstance = async () => {
     );
     return contract;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
     return null;
   }
 };

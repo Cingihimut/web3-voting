@@ -32,6 +32,7 @@ const Voting = () => {
         }
       }
     } catch (err) {
+      console.log(err);
       setIsVoted(false);
     }
   };
