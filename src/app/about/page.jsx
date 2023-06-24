@@ -15,10 +15,10 @@ const AboutPage = () => {
             <p className="text-lg mt-4 text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400">
               Kami adalah tim yang berkomitmen untuk menghadirkan platform
               voting online yang memprioritaskan transparansi dan keamanan dalam
-              setiap suara. Dengan tagline "Transparansi dan keamanan dalam
-              setiap suara", kami ingin memastikan bahwa setiap pengguna dapat
-              memiliki keyakinan dan kepercayaan penuh dalam proses pemilihan
-              online.
+              setiap suara. Dengan tagline &quot;Transparansi dan keamanan dalam
+              setiap suara &quot;, kami ingin memastikan bahwa setiap pengguna
+              dapat memiliki keyakinan dan kepercayaan penuh dalam proses
+              pemilihan online.
             </p>
           </div>
         </div>
