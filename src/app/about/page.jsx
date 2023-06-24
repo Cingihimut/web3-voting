@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 const AboutPage = () => {
   return (
-    <div classNameName="mt-16 pt-4 overflow-hidden">
-      <div classNameName="py-10">
-        <div classNameName="container mx-auto px-4">
-          <div classNameName="max-w-xl mx-auto">
+    <div className="mt-16 pt-4 overflow-hidden">
+      <div className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-xl mx-auto">
             <h1 className="mb-12 text-2xl text-center font-medium leading-none tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white">
               <span className="underline underline-offset-8 text-center decoration-4 decoration-blue-400 dark:decoration-blue-600">
                 About us
@@ -25,9 +25,9 @@ const AboutPage = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className=" p-4 ">
-          <div classNameName=" py-10 px-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-8">
-            <div classNameName="container mx-auto px-4">
-              <div classNameName="max-w-xl mx-auto">
+          <div className=" py-10 px-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-8">
+            <div className="container mx-auto px-4">
+              <div className="max-w-xl mx-auto">
                 <h1 className="mb-8 text-lg text-center font-medium leading-none tracking-tight text-gray-900 md:text-xl lg:text-2xl dark:text-white">
                   <span className="underline underline-offset-8 text-center decoration-4 decoration-blue-400 dark:decoration-blue-600">
                     Our Vision
@@ -47,9 +47,9 @@ const AboutPage = () => {
           </div>
         </div>
         <div className=" p-4 ">
-          <div classNameName=" py-10 px-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-8">
-            <div classNameName="container mx-auto px-4">
-              <div classNameName="max-w-xl mx-auto">
+          <div className=" py-10 px-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-8">
+            <div className="container mx-auto px-4">
+              <div className="max-w-xl mx-auto">
                 <h1 className="mb-8 text-lg text-center font-medium leading-none tracking-tight text-gray-900 md:text-xl lg:text-2xl dark:text-white">
                   <span className="underline underline-offset-8 text-center decoration-4 decoration-blue-400 dark:decoration-blue-600">
                     Our Mission
@@ -69,9 +69,9 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-      <div classNameName="py-10">
-        <div classNameName="container mx-auto">
-          <div classNameName="max-w-4xl mx-auto">
+      <div className="py-10">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h1 className="mb-12 text-2xl text-center font-medium leading-none tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white">
               <span className="underline underline-offset-8 text-center decoration-4 decoration-blue-400 dark:decoration-blue-600">
                 Our Team
@@ -81,8 +81,9 @@ const AboutPage = () => {
               <div className=" p-4">
                 <div className="flex flex-col items-center pb-10">
                   <Image
-                    width={24}
-                    height={24}
+                    quality={100}
+                    width={512}
+                    height={512}
                     alt={"Profile Icons"}
                     className="w-24 h-24 mb-3 rounded-full shadow-lg"
                     src="/man.png"
@@ -98,8 +99,9 @@ const AboutPage = () => {
               <div className=" p-4">
                 <div className="flex flex-col items-center pb-10">
                   <Image
-                    width={24}
-                    height={24}
+                    quality={100}
+                    width={512}
+                    height={512}
                     alt={"Profile Icons"}
                     className="w-24 h-24 mb-3 rounded-full shadow-lg"
                     src="/woman.png"
@@ -115,8 +117,9 @@ const AboutPage = () => {
               <div className=" p-4">
                 <div className="flex flex-col items-center pb-10">
                   <Image
-                    width={24}
-                    height={24}
+                    quality={100}
+                    width={512}
+                    height={512}
                     alt={"Profile Icons"}
                     className="w-24 h-24 mb-3 rounded-full shadow-lg"
                     src="/man2.png"
