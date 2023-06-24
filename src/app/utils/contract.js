@@ -1,6 +1,6 @@
 import contractABI from "../../contracts/Voting";
 import { connectWeb3 } from "./web3";
-// Membuat instance Web3
+// // Membuat instance Web3
 
 export const createContractInstance = async () => {
   try {
