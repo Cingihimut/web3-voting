@@ -8,7 +8,7 @@ export const createContractInstance = async () => {
 
     const contract = new web3.eth.Contract(
       contractABI.abi,
-      process.env.CONTRACT_VOTE
+      process.env.CONTRACT
     );
     return contract;
   } catch (error) {
