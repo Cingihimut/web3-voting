@@ -1,9 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { connectWeb3 } from "../utils/web3";
 import ConnectButton from "./ConnectButton";
 const Navbar = () => {
+  const [connectedAddress, setConnectedAddress] = useState(null);
+  const handleConnect = async () => {
+    try {
+      const web3 = await connectWeb3();
+      const accounts = await web3.eth.requestAccounts();
+      if (accounts.length > 0) {
+        setConnectedAddress(accounts[0]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const pathName = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -28,7 +42,10 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2">
-          <ConnectButton />
+          <ConnectButton
+            handleConnect={handleConnect}
+            connectedAddress={connectedAddress}
+          />
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"

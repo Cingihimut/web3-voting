@@ -1,21 +1,14 @@
-"use state";
-import React from "react";
+"use client";
+import { useState } from "react";
 import { voteCandidate } from "../utils/voteCandidate";
-const VoteButton = ({ id_kandidat }) => {
-  const handleVote = async () => {
-    try {
-      let result = await voteCandidate(id_kandidat);
-      console.log(result);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+const VoteButton = ({ id_kandidat, isVoted, handleVote }) => {
   return (
     <button
-      onClick={handleVote}
+      type="button"
+      onClick={isVoted ? "" : () => handleVote(id_kandidat)}
       className="inline-flex text-center  items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
-      VOTE
+      {isVoted ? "Anda Sudah Voting" : "VOTE"}
       <svg
         aria-hidden="true"
         className="w-4 h-4 ml-2 -mr-1"

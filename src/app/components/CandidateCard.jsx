@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import VoteButton from "./VoteButton";
-const CandidateCard = ({ img, nama, deskripsi, id }) => {
+const CandidateCard = ({ img, nama, deskripsi, id, isVoted, handleVote }) => {
   return (
     <>
       <div className="w-2/3 mx-4 text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-center items-center">
@@ -29,7 +29,11 @@ const CandidateCard = ({ img, nama, deskripsi, id }) => {
             </p>
           </div>
           <div className="order-3 flex justify-center items-center">
-            <VoteButton id_kandidat={id} />
+            <VoteButton
+              id_kandidat={id}
+              handleVote={handleVote}
+              isVoted={isVoted}
+            />
           </div>
         </div>
       </div>

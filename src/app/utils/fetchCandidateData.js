@@ -1,8 +1,9 @@
 // import web3 from "web3";
-import contract from "./contract";
+import { createContractInstance } from "./contract";
 
 export const fetchCandidateData = async () => {
   try {
+    const contract = await createContractInstance();
     const candidateCount = await contract.methods.candidatesCount().call();
     const candidates = [];
 
@@ -12,6 +13,7 @@ export const fetchCandidateData = async () => {
     }
     return candidates;
   } catch (error) {
+    console.log(error);
     throw new Error("Failed to fetch candidate data");
   }
 };
