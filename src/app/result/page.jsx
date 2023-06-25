@@ -55,7 +55,7 @@ const ResultPage = () => {
                 Result
               </span>
             </h1>
-            <h1 class="mb-4 text-center mt-6 text-md text-white font-medium text-gray-400 dark:text-white md:text-lg lg:text-xl">
+            <h1 class="mb-4 text-center mt-6 text-md font-medium text-gray-400 dark:text-white md:text-lg lg:text-xl">
               <div suppressHydrationWarning>
                 {dateNow.toLocaleString("en-US", options)}
               </div>
