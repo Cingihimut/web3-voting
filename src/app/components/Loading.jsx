@@ -7,7 +7,7 @@ export const Loading = ({ pesan }) => {
         class="flex p-4 mt-8 mx-auto mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800"
         role="Loading"
       >
-        <div>
+        <div className="text-center mx-auto">
           <div class="text-center">
             <div role="status">
               <svg
