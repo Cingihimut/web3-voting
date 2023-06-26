@@ -11,8 +11,8 @@ const HomePage = () => {
             <span className="text-blue-700"> Suara!</span>
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-            Dapatkan kemudahan akses, keamanan terjamin, dan hasil yang
-            transparan dengan AmiVote. Jadilah bagian dari revolusi demokrasi
+            Dapatkan kemudahan akses, keamanan terjamin, dan
+            transparansi serta hasil yang dapat di lihat secara real time dengan AmiVote. Jadilah bagian dari revolusi demokrasi
             digital yang memperkuat suara Anda!
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">

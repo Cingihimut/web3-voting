@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ukuran scroll bar */
+::-webkit-scrollbar {
+    width: 10px; /* lebar scroll bar */
+  }
+  
+  /* Warna track (area latar belakang scroll bar) */
+  ::-webkit-scrollbar-track {
+    background: #3d4563;
+  }
+  
+  /* Warna thumb (bagian scroll bar yang dapat digeser) */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Hover pada thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
