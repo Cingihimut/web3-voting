@@ -47,38 +47,21 @@
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
 require("dotenv").config();
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-// const { INFURA_API_KEY, MNEMONIC} = process.env;
-const INFURA_API_KEY = "https://sepolia.infura.io/v3/1148f333c8854442ab60e4e4ac094730"
-const MNEMONIC = "solid fog skirt auction pizza left obscure swarm cool envelope basket spoon"
+const { NEXT_PUBLIC_INFURA_API_KEY, NEXT_PUBLIC_PRIVATE_KEY, NEXT_PUBLIC_ETHERSCAN_API_KEY} = process.env;
 
 module.exports = {
-  /**
-   * Networks define how you connect to your ethereum client and let you set the
-   * defaults web3 uses to send transactions. If you don't specify one truffle
-   * will spin up a managed Ganache instance for you on port 9545 when you
-   * run `develop` or `test`. You can ask a truffle command to use a specific
-   * network from the command line, e.g
-   *
-   * $ truffle test --network <network-name>
-   */
-
   networks: {
-    // Useful for testing. The `development` name is special - truffle uses it by default
-    // if it's defined here and no other network is specified at the command line.
-    // You should run a client (like ganache, geth, or parity) in a separate terminal
-    // tab if you use this network and you must also set the `host`, `port` and `network_id`
-    // options below to some value.
-    //
-    // development: {
-    //   host: "127.0.0.1", // Localhost (default: none)
-    //   port: 9545, // Standard Ethereum port (default: none)
-    //   network_id: "*", // Any network (default: none)
-    // },
     sepolia: {
-      provider: () => new HDWalletProvider(MNEMONIC, INFURA_API_KEY),
+      provider: () => new HDWalletProvider(NEXT_PUBLIC_PRIVATE_KEY, NEXT_PUBLIC_INFURA_API_KEY),
       network_id: "11155111",
       gas: 4465030,
+      plugins: ['truffle-plugin-verify'],
     },
+
+    api_keys: {
+      etherscan: NEXT_PUBLIC_ETHERSCAN_API_KEY
+    }
+
     //
     // An additional network, but with some advanced options…
     // advanced: {
